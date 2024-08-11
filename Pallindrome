@@ -1,0 +1,6 @@
+name=input("Enter name:")
+rev=name[::-1]
+if rev==name:
+ print("Paliandrome")
+else:
+ print("Not paliandrome")
