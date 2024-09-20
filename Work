@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpooling Community</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 36px;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            margin: 10px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .buttons a:hover {
+            background-color: #45a049;
+        }
+
+        /* Hide forms by default */
+        .form-container {
+            display: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .back-btn {
+            background-color: #f44336;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-container">
+        <h1>Join the Carpooling Community</h1>
+        <div class="buttons">
+            <a href="javascript:void(0)" onclick="showLogin()">Login</a>
+            <a href="javascript:void(0)" onclick="showSignup()">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container" id="login-container">
+        <h2>Login</h2>
+        <form>
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="form-container" id="signup-container">
+        <h2>Sign Up</h2>
+        <form>
+            <input type="text" placeholder="First Name" name="firstname" required>
+            <input type="text" placeholder="Last Name" name="lastname" required>
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        
+        function showLogin() {
+            document.getElementById('main-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        }
+
+        
+        function showSignup() {
+            document.getElementById('main-container').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'block';
+        }
+
+        
+        function goBack() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('main-container').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
